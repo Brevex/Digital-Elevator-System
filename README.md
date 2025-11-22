@@ -1,41 +1,41 @@
-# Projeto Sistema de Controle de Elevadores em VHDL
+# VHDL Elevator Control System Project
 
-Este projeto implementa um sistema de controle para 3 elevadores em um edifício de 32 andares, utilizando VHDL. A arquitetura é dividida em dois níveis:
+This project implements a control system for 3 elevators in a 32-story building using VHDL. The architecture is divided into two levels:
 
-1.  **Controlador Local (`elevator_controller.vhd`):** Uma FSM por elevador que gerencia o motor, portas e estado individual.
-2.  **Escalonador (`elevator_scheduler.vhd`):** Um módulo supervisor central que recebe chamadas externas e aloca o elevador mais apropriado com base em um algoritmo de custo.
+1.  **Local Controller (`elevator_controller.vhd`):** An FSM (Finite State Machine) per elevator that manages the motor, doors, and individual state.
+2.  **Scheduler (`elevator_scheduler.vhd`):** A central supervisor module that receives external calls and allocates the most appropriate elevator based on a cost algorithm.
 
-## 🛠️ Ferramentas e Requisitos
+## 🛠️ Tools and Requirements
 
-Para simular este projeto, você precisará das seguintes ferramentas instaladas:
+To simulate this project, you will need the following tools installed:
 
-- **GHDL:** Um simulador VHDL de código aberto.
-- **GTKWave:** Um visualizador de formas de onda.
-- **Make**: Para usar o Makefile fornecido.
+- **GHDL:** An open-source VHDL simulator.
+- **GTKWave:** A waveform viewer.
+- **Make**: To use the provided Makefile.
 
-## 🚀 Instruções de Simulação
+## 🚀 Simulation Instructions
 
-O `Makefile` fornecido automatiza todo o processo. Abra um terminal na raiz do projeto e execute os seguintes comandos:
+The provided `Makefile` automates the entire process. Open a terminal in the project root and execute the following commands:
 
-### 1. Compilar e Executar a Simulação
+### 1. Compile and Run Simulation
 
-Este é o comando principal. Ele irá compilar todos os arquivos VHDL, executar a simulação completa e gerar o arquivo de forma de onda (`elevator_system_tb.ghw`).
+This is the main command. It will compile all VHDL files, run the full simulation, and generate the waveform file (`elevator_system_tb.ghw`).
 
 ```bash
 make run
 ```
 
-### 2. Visualizar os Resultados
+### 2. View Results
 
-Após a execução da simulação, use este comando para abrir o arquivo de forma de onda gerado (.ghw) no GTKWave:
+After running the simulation, use this command to open the generated waveform file (.ghw) in GTKWave:
 
 ```bash
 make wave
 ```
 
-### 3. Limpar Arquivos Gerados
+### 3. Clean Generated Files
 
-Para remover o diretório work/, o executável do testbench e o arquivo .ghw, execute:
+To remove the `work/` directory, the testbench executable, and the `.ghw` file, execute:
 
 ```bash
 make clean
